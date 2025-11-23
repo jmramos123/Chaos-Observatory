@@ -122,18 +122,19 @@ func determine_ending(final_state: Dictionary) -> String:
 		print("ENDING: Frozen Collapse (low stability or growth)")
 		return "frozen_collapse"
 	
-	# Check for extreme imbalances (Fractal Cascade)
-	# This represents total system breakdown into chaos from POSITIVE extremes
-	# Achievable by: Extreme good performance on high-weight tasks
-	if o > 5.0 or s > 6.0 or e > 2.5 or abs(m) > 0.4 or abs(x) > 0.6:
-		print("ENDING: Fractal Cascade (extreme values)")
-		return "fractal_cascade"
-	
 	# Harmonic Garden - high order AND high stability (precision + control)
+	# Check BEFORE Fractal Cascade - this is balanced excellence, not chaos
 	# Requires good performance on alignment tasks (1,4,5,8) + stability tasks (3,6,7,8,10)
 	if o > 4.0 and s > 5.0:
 		print("ENDING: Harmonic Garden (high order + stability)")
 		return "harmonic_garden"
+	
+	# Check for extreme imbalances (Fractal Cascade)
+	# This represents total system breakdown into chaos from POSITIVE extremes
+	# Achievable by: Extreme good performance on high-weight tasks BUT imbalanced
+	if o > 5.0 or s > 6.0 or e > 2.5 or abs(m) > 0.4 or abs(x) > 0.6:
+		print("ENDING: Fractal Cascade (extreme values)")
+		return "fractal_cascade"
 	
 	# Storm Spiral - high positive entropy with high oscillation (chaos + turbulence)
 	# Achieved by failing most tasks while doing well on Task2 (oscillation)

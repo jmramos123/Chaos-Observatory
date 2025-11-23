@@ -60,11 +60,11 @@ Your choices throughout the 10 tasks determine which ending you'll reach. Each e
 ---
 
 ### 🌀 Fractal Cascade
-**How to get it:** Create extreme imbalances - fail tasks dramatically or push any metric to absolute extremes.
+**How to get it:** Push a single metric to extremes while neglecting balance - excel at ONLY order tasks, or ONLY momentum tasks, creating imbalanced excellence.
 
 **What happens:** The field fractures into infinite recursive complexity. Self-similar patterns branch endlessly in a beautiful but chaotic mathematical explosion.
 
-**Chaos Metrics:** Any metric reaches extreme values (Order >5, Stability >6, Entropy >2.5, Momentum >0.4, or Oscillation >0.6)
+**Chaos Metrics:** Any single metric reaches extreme values (Order >5, Stability >6, Entropy >2.5, abs(Momentum) >0.4, or abs(Oscillation) >0.6) WITHOUT having balanced Order + Stability
 
 ---
 
@@ -82,7 +82,7 @@ Your choices throughout the 10 tasks determine which ending you'll reach. Each e
 
 **What happens:** The field succumbs to entropy. All motion ceases, energy drains away, and everything collapses slowly into a cold, silent stasis.
 
-**Chaos Metrics:** Negative Growth Pressure (<-0.5) + Low Stability (<-2.0)
+**Chaos Metrics:** Low Stability (<-2.0) OR Negative Growth Pressure (<-0.5)
 
 ---
 
