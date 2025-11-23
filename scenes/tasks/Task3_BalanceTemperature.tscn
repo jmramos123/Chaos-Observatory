@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://da6w01bmsy8j"]
+
+[ext_resource type="Script" path="res://scripts/Task3_BalanceTemperature.gd" id="1_task3"]
+
+[node name="Task3_BalanceTemperature" type="Node2D"]
+script = ExtResource("1_task3")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = 200.0
+
+[node name="LabelInstructions" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Balance Temperature Flow"
+theme_override_font_sizes/font_size = 16
+
+[node name="LabelTimer" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Time: 10"
+
+[node name="LabelStatus" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Balance: 0%"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LeftButton" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Heat Left +"
+
+[node name="RightButton" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Heat Right +"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

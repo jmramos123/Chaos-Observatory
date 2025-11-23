@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfc8y23dn32bl"]
+
+[ext_resource type="Script" path="res://scripts/Task5_SequenceRunes.gd" id="1_task5"]
+
+[node name="Task5_SequenceRunes" type="Node2D"]
+script = ExtResource("1_task5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 250.0
+offset_bottom = 150.0
+
+[node name="LabelInstructions" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Sequence the Runes (1-2-3-4)"
+theme_override_font_sizes/font_size = 16
+
+[node name="LabelTimer" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Time: 12"
+
+[node name="LabelStatus" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Sequence: []"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "1"
+
+[node name="Button2" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "2"
+
+[node name="Button3" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "3"
+
+[node name="Button4" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "4"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/Button1" to="." method="add_rune" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/Button2" to="." method="add_rune" binds= [2]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/Button3" to="." method="add_rune" binds= [3]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/Button4" to="." method="add_rune" binds= [4]]

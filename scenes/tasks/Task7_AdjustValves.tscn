@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0gg2g5ux8lv"]
+
+[ext_resource type="Script" path="res://scripts/Task7_AdjustValves.gd" id="1_task7"]
+
+[node name="Task7_AdjustValves" type="Node2D"]
+script = ExtResource("1_task7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 350.0
+offset_bottom = 300.0
+
+[node name="LabelInstructions" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Adjust the Pressure Valves"
+theme_override_font_sizes/font_size = 16
+
+[node name="LabelTimer" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Time: 10"
+
+[node name="LabelStatus" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Accuracy: 0%"
+
+[node name="Valve1" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Valve1"]
+layout_mode = 2
+text = "Valve 1:"
+
+[node name="Minus" type="Button" parent="CanvasLayer/VBoxContainer/Valve1"]
+layout_mode = 2
+text = "-"
+
+[node name="Plus" type="Button" parent="CanvasLayer/VBoxContainer/Valve1"]
+layout_mode = 2
+text = "+"
+
+[node name="Valve2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Valve2"]
+layout_mode = 2
+text = "Valve 2:"
+
+[node name="Minus" type="Button" parent="CanvasLayer/VBoxContainer/Valve2"]
+layout_mode = 2
+text = "-"
+
+[node name="Plus" type="Button" parent="CanvasLayer/VBoxContainer/Valve2"]
+layout_mode = 2
+text = "+"
+
+[node name="Valve3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Valve3"]
+layout_mode = 2
+text = "Valve 3:"
+
+[node name="Minus" type="Button" parent="CanvasLayer/VBoxContainer/Valve3"]
+layout_mode = 2
+text = "-"
+
+[node name="Plus" type="Button" parent="CanvasLayer/VBoxContainer/Valve3"]
+layout_mode = 2
+text = "+"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Valve1/Minus" to="." method="adjust_valve" binds= [0, -0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Valve1/Plus" to="." method="adjust_valve" binds= [0, 0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Valve2/Minus" to="." method="adjust_valve" binds= [1, -0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Valve2/Plus" to="." method="adjust_valve" binds= [1, 0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Valve3/Minus" to="." method="adjust_valve" binds= [2, -0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Valve3/Plus" to="." method="adjust_valve" binds= [2, 0.1]]

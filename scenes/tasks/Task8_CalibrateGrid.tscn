@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc1hh3h6v0amw"]
+
+[ext_resource type="Script" path="res://scripts/Task8_CalibrateGrid.gd" id="1_task8"]
+
+[node name="Task8_CalibrateGrid" type="Node2D"]
+script = ExtResource("1_task8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 350.0
+offset_bottom = 300.0
+
+[node name="LabelInstructions" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Calibrate the Harmonic Grid"
+theme_override_font_sizes/font_size = 16
+
+[node name="LabelTimer" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Time: 10"
+
+[node name="LabelStatus" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Harmony: 0%"
+
+[node name="Grid1" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Grid1"]
+layout_mode = 2
+text = "Node 1:"
+
+[node name="Minus" type="Button" parent="CanvasLayer/VBoxContainer/Grid1"]
+layout_mode = 2
+text = "-"
+
+[node name="Plus" type="Button" parent="CanvasLayer/VBoxContainer/Grid1"]
+layout_mode = 2
+text = "+"
+
+[node name="Grid2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Grid2"]
+layout_mode = 2
+text = "Node 2:"
+
+[node name="Minus" type="Button" parent="CanvasLayer/VBoxContainer/Grid2"]
+layout_mode = 2
+text = "-"
+
+[node name="Plus" type="Button" parent="CanvasLayer/VBoxContainer/Grid2"]
+layout_mode = 2
+text = "+"
+
+[node name="Grid3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Grid3"]
+layout_mode = 2
+text = "Node 3:"
+
+[node name="Minus" type="Button" parent="CanvasLayer/VBoxContainer/Grid3"]
+layout_mode = 2
+text = "-"
+
+[node name="Plus" type="Button" parent="CanvasLayer/VBoxContainer/Grid3"]
+layout_mode = 2
+text = "+"
+
+[node name="Grid4" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/Grid4"]
+layout_mode = 2
+text = "Node 4:"
+
+[node name="Minus" type="Button" parent="CanvasLayer/VBoxContainer/Grid4"]
+layout_mode = 2
+text = "-"
+
+[node name="Plus" type="Button" parent="CanvasLayer/VBoxContainer/Grid4"]
+layout_mode = 2
+text = "+"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Grid1/Minus" to="." method="adjust_harmonic" binds= [0, -0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Grid1/Plus" to="." method="adjust_harmonic" binds= [0, 0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Grid2/Minus" to="." method="adjust_harmonic" binds= [1, -0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Grid2/Plus" to="." method="adjust_harmonic" binds= [1, 0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Grid3/Minus" to="." method="adjust_harmonic" binds= [2, -0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Grid3/Plus" to="." method="adjust_harmonic" binds= [2, 0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Grid4/Minus" to="." method="adjust_harmonic" binds= [3, -0.1]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Grid4/Plus" to="." method="adjust_harmonic" binds= [3, 0.1]]

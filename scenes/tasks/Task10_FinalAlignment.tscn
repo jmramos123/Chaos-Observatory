@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://de3jj5j8x1koy"]
+
+[ext_resource type="Script" path="res://scripts/Task10_FinalAlignment.gd" id="1_task10"]
+
+[node name="Task10_FinalAlignment" type="Node2D"]
+script = ExtResource("1_task10")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = 200.0
+
+[node name="LabelInstructions" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Set the Final Alignment"
+theme_override_font_sizes/font_size = 16
+
+[node name="LabelTimer" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Time: 8"
+
+[node name="LabelStatus" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Angle: 0°"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RotateLeftButton" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "↺ Rotate Left"
+
+[node name="RotateRightButton" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Rotate Right ↻"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/RotateLeftButton" to="." method="rotate_alignment" binds= [-15.0]]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/RotateRightButton" to="." method="rotate_alignment" binds= [15.0]]
