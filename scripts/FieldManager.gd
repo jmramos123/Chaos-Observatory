@@ -116,10 +116,16 @@ func determine_ending(final_state: Dictionary) -> String:
 	print("Oscillation: ", x)
 	print("===================")
 	
-	# Check for extreme imbalances first (Fractal Cascade)
-	# This represents total system breakdown into chaos
-	# Achievable by: Extreme performance (very good or very bad) on high-weight tasks
-	if abs(o) > 5.0 or abs(s) > 6.0 or abs(e) > 2.5 or abs(m) > 0.4 or abs(x) > 0.6:
+	# Frozen Collapse - low stability OR low growth pressure (energy drain)
+	# Check this BEFORE Fractal Cascade to avoid conflict with extreme negatives
+	if s < -2.0 or g < -0.5:
+		print("ENDING: Frozen Collapse (low stability or growth)")
+		return "frozen_collapse"
+	
+	# Check for extreme imbalances (Fractal Cascade)
+	# This represents total system breakdown into chaos from POSITIVE extremes
+	# Achievable by: Extreme good performance on high-weight tasks
+	if o > 5.0 or s > 6.0 or e > 2.5 or abs(m) > 0.4 or abs(x) > 0.6:
 		print("ENDING: Fractal Cascade (extreme values)")
 		return "fractal_cascade"
 	
@@ -141,11 +147,8 @@ func determine_ending(final_state: Dictionary) -> String:
 		print("ENDING: Runaway Bloom (high momentum)")
 		return "runaway_bloom"
 	
-	# Frozen Collapse - low stability OR low growth pressure (energy drain)
-	# Requires consistent poor performance leading to negative evolution
-	if s < -2.0 or g < -0.5:
-		print("ENDING: Frozen Collapse (low stability or growth)")
-		return "frozen_collapse"
+	# Frozen Collapse check is now at the top (line ~120)
+	# Removed duplicate to avoid confusion
 	
 	# Stable Equilibrium - all metrics in moderate range (balanced performance)
 	# The "good enough" ending - not perfect, not terrible
