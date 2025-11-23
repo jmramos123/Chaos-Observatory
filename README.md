@@ -64,7 +64,7 @@ Your choices throughout the 10 tasks determine which ending you'll reach. Each e
 
 **What happens:** The field fractures into infinite recursive complexity. Self-similar patterns branch endlessly in a beautiful but chaotic mathematical explosion.
 
-**Chaos Metrics:** Any metric reaches extreme values (Order >7, Stability >8, Entropy >6, Momentum >1.2, or Oscillation >1.8)
+**Chaos Metrics:** Any metric reaches extreme values (Order >5, Stability >6, Entropy >2.5, Momentum >0.4, or Oscillation >0.6)
 
 ---
 
@@ -73,7 +73,7 @@ Your choices throughout the 10 tasks determine which ending you'll reach. Each e
 
 **What happens:** Chaos takes physical form. The field becomes a maelstrom of competing energies, particles spiral wildly in a dance of entropy and oscillation.
 
-**Chaos Metrics:** High Positive Entropy (>2.0) + High Oscillation (>1.0)
+**Chaos Metrics:** High Positive Entropy (>2.0) + Positive Oscillation (>0.3)
 
 ---
 
@@ -91,7 +91,7 @@ Your choices throughout the 10 tasks determine which ending you'll reach. Each e
 
 **What happens:** The field explodes into uncontrolled growth. Energy cascades without limit in a beautiful but destructive explosion of rainbow particles.
 
-**Chaos Metrics:** High Momentum (>0.8) + Entropy between -1.0 and 3.0
+**Chaos Metrics:** High Momentum (>0.35) + Entropy between -1.5 and 2.5
 
 ---
 
