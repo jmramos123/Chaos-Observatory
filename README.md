@@ -46,52 +46,52 @@ Your choices throughout the 10 tasks determine which ending you'll reach. Each e
 
 **What happens:** The field achieves perfect balance. All forces harmonize into a peaceful, sustainable state. Particles arrange in a gentle, pulsing grid pattern.
 
-**Chaos Metrics:** All variables remain moderate and balanced (no metric exceeds 70 or falls below 30).
+**Chaos Metrics:** All metrics remain in moderate ranges (Order < 3, Stability < 3.5, Entropy < 2, Momentum < 0.7)
 
 ---
 
 ### 🔷 Harmonic Garden
-**How to get it:** Excel at precision tasks (Task 1, 2, 5, 8) while maintaining stability.
+**How to get it:** Excel at precision tasks (Task 1, 4, 5, 8) while maintaining stability (Task 3, 6, 7, 8, 10).
 
 **What happens:** The field crystallizes into perfect order. Hexagonal patterns emerge, creating a pristine mathematical paradise where every element knows its place.
 
-**Chaos Metrics:** High Order (>60) + High Stability (>60)
+**Chaos Metrics:** High Order (>4.0) + High Stability (>5.0)
 
 ---
 
 ### 🌀 Fractal Cascade
-**How to get it:** Create extreme imbalances - fail tasks dramatically or succeed too perfectly.
+**How to get it:** Create extreme imbalances - fail tasks dramatically or push any metric to absolute extremes.
 
 **What happens:** The field fractures into infinite recursive complexity. Self-similar patterns branch endlessly in a beautiful but chaotic mathematical explosion.
 
-**Chaos Metrics:** Any metric exceeds 85 or falls below 15 (extreme imbalance)
+**Chaos Metrics:** Any metric reaches extreme values (Order >7, Stability >8, Entropy >6, Momentum >1.2, or Oscillation >1.8)
 
 ---
 
 ### 🌪️ Storm Spiral
-**How to get it:** Perform inconsistently, especially on later tasks (Task 6, 7, 9, 10).
+**How to get it:** Fail most tasks (building positive entropy) while excelling at Task 2 (oscillation).
 
 **What happens:** Chaos takes physical form. The field becomes a maelstrom of competing energies, particles spiral wildly in a dance of entropy and oscillation.
 
-**Chaos Metrics:** High Entropy (>65) + High Oscillation (>55)
+**Chaos Metrics:** High Positive Entropy (>2.0) + High Oscillation (>1.0)
 
 ---
 
 ### ❄️ Frozen Collapse
-**How to get it:** Fail consistently throughout, especially early tasks (Task 1-4).
+**How to get it:** Fail consistently throughout, especially early high-weight tasks (Task 1-4).
 
 **What happens:** The field succumbs to entropy. All motion ceases, energy drains away, and everything collapses slowly into a cold, silent stasis.
 
-**Chaos Metrics:** Low Growth Pressure (<30) + Low Stability (<30)
+**Chaos Metrics:** Negative Growth Pressure (<-0.5) + Low Stability (<-2.0)
 
 ---
 
 ### 🎆 Runaway Bloom
-**How to get it:** Rush through tasks successfully, especially momentum-building tasks (Task 3, 4, 7).
+**How to get it:** Complete Task 7 and 10 quickly (momentum) while having mixed performance (moderate entropy).
 
 **What happens:** The field explodes into uncontrolled growth. Energy cascades without limit in a beautiful but destructive explosion of rainbow particles.
 
-**Chaos Metrics:** High Momentum (>70) + Medium-High Entropy (>45)
+**Chaos Metrics:** High Momentum (>0.8) + Entropy between -1.0 and 3.0
 
 ---
 

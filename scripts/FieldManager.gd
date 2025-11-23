@@ -100,33 +100,38 @@ func determine_ending(final_state: Dictionary) -> String:
 	var g = final_state["growth_pressure"]
 	var x = final_state["oscillation"]
 	
-	# Calculate dominance scores
-	var high_order = o > 0.6
-	var high_stability = s > 0.5
-	var high_entropy = e > 0.7
-	var high_momentum = m > 0.6
-	var high_growth = g > 0.5
-	var high_oscillation = x > 0.6
-	
-	var low_stability = s < -0.3
-	var low_growth = g < -0.2
-	
-	# Ending logic based on combinations
-	if high_order and high_stability:
-		return "harmonic_garden"
-	elif high_entropy and high_oscillation:
-		return "storm_spiral"
-	elif low_growth and low_stability:
-		return "frozen_collapse"
-	elif high_momentum and e > 0.3 and e < 0.8:
-		return "runaway_bloom"
-	elif abs(o) < 0.3 and abs(s) < 0.3 and abs(e) < 0.3:
-		return "stable_equilibrium"
-	elif high_entropy or abs(m) > 0.8 or abs(x) > 0.8:
+	# Check for extreme imbalances first (Fractal Cascade)
+	# This represents total system breakdown into chaos
+	if abs(o) > 7.0 or abs(s) > 8.0 or abs(e) > 6.0 or abs(m) > 1.2 or abs(x) > 1.8:
 		return "fractal_cascade"
-	else:
-		# Default balanced ending
+	
+	# Harmonic Garden - high order AND high stability (precision + control)
+	# Requires good performance on alignment tasks (1,4,5,8) + stability tasks (3,6,7,8,10)
+	if o > 4.0 and s > 5.0:
+		return "harmonic_garden"
+	
+	# Storm Spiral - high positive entropy with high oscillation (chaos + turbulence)
+	# Achieved by failing tasks while being good at Task2 (oscillation)
+	if e > 2.0 and x > 1.0:
+		return "storm_spiral"
+	
+	# Runaway Bloom - high momentum with moderate positive entropy (uncontrolled growth)
+	# Requires fast completion of Task7/10 while having some failures
+	if m > 0.8 and e > -1.0 and e < 3.0:
+		return "runaway_bloom"
+	
+	# Frozen Collapse - low growth pressure AND low stability (energy drain + instability)
+	# Requires consistent poor performance leading to negative evolution
+	if g < -0.5 and s < -2.0:
+		return "frozen_collapse"
+	
+	# Stable Equilibrium - all metrics in moderate range (balanced performance)
+	# The "good enough" ending - not perfect, not terrible
+	if abs(o) < 3.0 and abs(s) < 3.5 and abs(e) < 2.0 and abs(m) < 0.7 and abs(g) < 1.5 and abs(x) < 1.0:
 		return "stable_equilibrium"
+	
+	# Default fallback - Stable Equilibrium for any unmatched state
+	return "stable_equilibrium"
 
 # Helper for fractional part
 func fract(v: float) -> float:
