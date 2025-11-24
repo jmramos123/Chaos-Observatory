@@ -116,8 +116,21 @@ func determine_ending(final_state: Dictionary) -> String:
 	print("Oscillation: ", x)
 	print("===================")
 	
+	# Runaway Bloom - high momentum with moderate entropy (uncontrolled growth)
+	# Check FIRST among positive endings - momentum is unique indicator
+	if m > 0.3 and e > -2.0 and e < 2.0:
+		print("ENDING: Runaway Bloom (high momentum)")
+		return "runaway_bloom"
+	
+	# Storm Spiral - high positive entropy with high oscillation (chaos + turbulence)
+	# Check BEFORE Frozen Collapse - active chaos vs passive collapse
+	# Represents turbulent energy, not stillness
+	if e > 1.5 and x > 0.2:
+		print("ENDING: Storm Spiral (high entropy + oscillation)")
+		return "storm_spiral"
+	
 	# Frozen Collapse - low stability OR low growth pressure (energy drain)
-	# Check this BEFORE Fractal Cascade to avoid conflict with extreme negatives
+	# Check AFTER Storm Spiral - this is passive collapse, not active chaos
 	if s < -2.0 or g < -0.5:
 		print("ENDING: Frozen Collapse (low stability or growth)")
 		return "frozen_collapse"
@@ -125,28 +138,16 @@ func determine_ending(final_state: Dictionary) -> String:
 	# Harmonic Garden - high order AND high stability (precision + control)
 	# Check BEFORE Fractal Cascade - this is balanced excellence, not chaos
 	# Requires good performance on alignment tasks (1,4,5,8) + stability tasks (3,6,7,8,10)
-	if o > 4.0 and s > 5.0:
+	if o > 3.5 and s > 4.5:
 		print("ENDING: Harmonic Garden (high order + stability)")
 		return "harmonic_garden"
 	
 	# Check for extreme imbalances (Fractal Cascade)
 	# This represents total system breakdown into chaos from POSITIVE extremes
-	# Achievable by: Extreme good performance on high-weight tasks BUT imbalanced
-	if o > 5.0 or s > 6.0 or e > 2.5 or abs(m) > 0.4 or abs(x) > 0.6:
+	# Checked AFTER specialized endings to avoid blocking them
+	if o > 4.5 or s > 5.5 or abs(e) > 2.0:
 		print("ENDING: Fractal Cascade (extreme values)")
 		return "fractal_cascade"
-	
-	# Storm Spiral - high positive entropy with high oscillation (chaos + turbulence)
-	# Achieved by failing most tasks while doing well on Task2 (oscillation)
-	if e > 2.0 and x > 0.3:
-		print("ENDING: Storm Spiral (high entropy + oscillation)")
-		return "storm_spiral"
-	
-	# Runaway Bloom - high momentum with moderate entropy (uncontrolled growth)
-	# Requires fast completion of Task7/10 (momentum) with mixed performance
-	if m > 0.35 and e > -1.5 and e < 2.5:
-		print("ENDING: Runaway Bloom (high momentum)")
-		return "runaway_bloom"
 	
 	# Frozen Collapse check is now at the top (line ~120)
 	# Removed duplicate to avoid confusion
